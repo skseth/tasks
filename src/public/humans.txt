@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Samir Seth -- developer
+
+# THANKS
+
+Kriasoft's React Starter Kit -- https://github.com/kriasoft/react-starter-kit/
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, ES2015, Node
