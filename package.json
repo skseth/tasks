@@ -15,5 +15,19 @@
   "bugs": {
     "url": "https://github.com/skseth/tasks/issues"
   },
-  "homepage": "https://github.com/skseth/tasks#readme"
+  "homepage": "https://github.com/skseth/tasks#readme",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-preset-node5": "^11.1.0",
+    "babel-preset-stage-0": "^6.5.0"
+  },
+  "babel": {
+    "presets": [
+      "node5",
+      "stage-0"
+    ]
+  },
+  "scripts": {
+    "start": "babel-node tools/start"
+  }
 }
