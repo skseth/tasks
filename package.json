@@ -4,7 +4,9 @@
   "description": "Action-oriented blog",
   "main": "temp.js",
   "scripts": {
-    "start": "babel-node tools/runTask start"
+    "start": "babel-node tools/runTask start",
+    "build": "babel-node tools/runTask buildServer",
+    "serve": "node build/server.js"
   },
   "repository": {
     "type": "git",
