@@ -7,9 +7,9 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
+import Promise from 'bluebird';
 import path from 'path';
 import gaze from 'gaze';
-import Promise from 'bluebird';
 import fs from 'fs';
 /**
  * Copies static files such as robots.txt, favicon.ico to the
@@ -32,7 +32,7 @@ function ensureBuildFolderExists() {
 function copyFiles() {
   const ncp = Promise.promisify(require('ncp'));
   return Promise.all([
-    ncp('src/public', 'build/public')
+    ncp('client', 'build/public')
     .then(console.log('done copying'))
     .catch(err => console.log(err))
   ]);
