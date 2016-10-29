@@ -1,0 +1,30 @@
+{
+  "name": "tasks",
+  "version": "0.1.0",
+  "description": "Action-oriented blog",
+  "main": "temp.js",
+  "scripts": {
+    "start": "babel-node tools/runTask start",
+    "build": "babel-node tools/runTask buildServer",
+    "serve": "cd build && nodemon ./server.js",
+    "lrserve": "babel-node tools/serve.js",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "test": "babel-node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skseth/tasks.git"
+  },
+  "author": "samir seth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skseth/tasks/issues"
+  },
+  "homepage": "https://github.com/skseth/tasks#readme",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "rxjs": "^5.0.0-beta.11"
+  }
+}

@@ -4,9 +4,13 @@
   "description": "Action-oriented blog",
   "main": "temp.js",
   "scripts": {
-    "start": "babel-node tools/runTask start",
+    "start": "cd tools && babel-node serve.js",
+    "postinstall": "npm --prefix ./tools install && npm --prefix ./server install && npm --prefix ./client install",
     "build": "babel-node tools/runTask buildServer",
-    "serve": "node build/server.js"
+    "serve": "cd server/build && babel-node ./server.js",
+    "lrserve": "cd tools && babel-node serve.js",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "test": "babel-node test.js"
   },
   "repository": {
     "type": "git",
@@ -14,25 +18,16 @@
   },
   "author": "samir seth",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/skseth/tasks/issues"
-  },
   "homepage": "https://github.com/skseth/tasks#readme",
   "devDependencies": {
     "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.13.2",
     "babel-preset-node5": "^11.1.0",
     "babel-preset-stage-0": "^6.5.0",
-    "gaze": "^1.1.0",
-    "ncp": "^2.0.0"
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "tsify": "^1.0.4",
+    "typescript": "^1.8.10"
   },
-  "babel": {
-    "presets": [
-      "node5",
-      "stage-0"
-    ]
-  },
-  "dependencies": {
-    "bluebird": "^3.4.1",
-    "express": "^4.14.0"
-  }
+  "dependencies": {}
 }
