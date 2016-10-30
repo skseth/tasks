@@ -33,7 +33,7 @@ var requestStream = refreshClickStream.startWith({event: 'first click'})
 
 
 var responseStream  = requestStream
-  .flatMap<Array<Person>>(function(requestUrl) {
+  .flatMap(function(requestUrl) {
     return Rx.Observable.fromPromise(fetch(requestUrl)
       .then(function(response) {
         return response.json();

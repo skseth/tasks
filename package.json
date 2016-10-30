@@ -9,8 +9,12 @@
     "build": "babel-node tools/runTask buildServer",
     "serve": "cd server/build && babel-node ./server.js",
     "lrserve": "cd tools && babel-node serve.js",
+    "builds": "cd tools && babel-node builds.js",
+    "buildc": "cd tools && babel-node buildc.js",
+    "lrserve": "cd tools && babel-node serve.js",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
-    "test": "babel-node test.js"
+    "test": "babel-node test.js",
+    "allclean":"rm -rf node_modules && rm -rf client/{node_modules,build} && rm -rf server/{node_modules,build}"
   },
   "repository": {
     "type": "git",
@@ -26,8 +30,8 @@
     "babel-preset-stage-0": "^6.5.0",
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
-    "tsify": "^1.0.4",
-    "typescript": "^1.8.10"
+    "tsify": "^2.0.1",
+    "typescript": "^2.0.6"
   },
   "dependencies": {}
 }

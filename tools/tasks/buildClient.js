@@ -9,7 +9,6 @@ const srcdirname = path.join(projectdir, 'client', 'src')
 const srcappts = path.join(srcdirname, 'app.ts')
 const srccustomts = path.join(srcdirname, 'custom.d.ts')
 const srcmyelemts = path.join(srcdirname, 'components', 'my-element', 'index.ts')
-const srcxcounterjs = path.join(srcdirname, 'x-counter.js')
 const globalts = path.join(projectdir, 'client', 'typings', 'index.d.ts')
 const targetdirname = path.join(projectdir, 'client', 'build')
 const targetappjs = path.join(targetdirname, 'app.js')
@@ -32,7 +31,7 @@ const tsify_opts = {
 }
 
 async function compilejs() {
-  await browserify([srcappts, srccustomts, srcmyelemts, srcxcounterjs, globalts], browserify_opts)
+  await browserify([srcappts, srccustomts, srcmyelemts, globalts], browserify_opts)
     .plugin('tsify', tsify_opts)
     .transform("babelify", babelify_opts)
     .bundle()
